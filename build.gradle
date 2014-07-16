@@ -1,0 +1,30 @@
+apply plugin: 'war'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+def libraryVersions = [
+    jbossJavaee6_0: '3.0.2.Final',
+    guava: '11.0.2',
+    richfaces: '4.3.7.Final',
+    richfacesCdkAnnotations: '4.3.1.Final'
+]
+
+repositories {
+    mavenCentral()
+
+    maven {
+        // JBoss Public Maven Repository Group
+        url 'https://repository.jboss.org/nexus/content/groups/public-jboss'
+    }
+}
+
+dependencies {
+    providedCompile "org.jboss.spec:jboss-javaee-6.0:$libraryVersions.jbossJavaee6_0"
+
+    compile "com.google.guava:guava:$libraryVersions.guava"
+    compile "org.richfaces.core:richfaces-core-impl:$libraryVersions.richfaces"
+    compile "org.richfaces.ui:richfaces-components-ui:$libraryVersions.richfaces"
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

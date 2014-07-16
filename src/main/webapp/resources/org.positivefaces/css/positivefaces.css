@@ -1,0 +1,67 @@
+div.rf-pp-shade {
+    background-color: #000;
+}
+
+div.rf-pp-shdw {
+    display: none;
+}
+
+div.rf-pp-cntr {
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+
+div.rf-pp-hdr {
+    padding: 15px;
+    background: none;
+}
+
+div.rf-pp-hdr-cntrls {
+    top: 15px;
+    right: 15px;
+}
+
+div.rf-pp-hdr-cnt {
+    margin: 0;
+    padding: 0;
+    line-height: 1.428571429;
+    font-size: 18px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: inherit;
+}
+
+div.rf-pp-cnt {
+    padding: 20px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.pf-confirmdlg-btn-pane {
+    padding: 19px 20px 20px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+.pf-confirmdlg-btn-pane:before, .pf-confirmdlg-btn-pane:after {
+    display: table;
+    content: " ";
+}
+
+.pf-confirmdlg-btn-pane:after {
+    clear: both;
+}
+
+.pf-confirmdlg-btn-pane .btn + .btn {
+    margin-bottom: 0;
+    margin-left: 5px;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:pf="http://positivefaces.org"
+      xml:lang="en" lang="en">
+<h:head>
+    <title>RichFaces Confirmation Dialog</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <h:outputStylesheet library="org.positivefaces" name="css/bootstrap.css"/>
+    <h:outputStylesheet library="org.positivefaces" name="css/positivefaces.css"/>
+
+    <h:outputScript name="jquery.js"/>
+</h:head>
+<h:body>
+    <div class="container">
+        <div style="text-align: center; padding: 60px;">
+            <pf:commandButton styleClass="btn btn-lg btn-primary" value="Press me!">
+                <pf:confirm header="Confirmation"
+                               message="Do you really want to do something?"/>
+            </pf:commandButton>
+        </div>
+    </div>
+
+    <pf:confirmDialog minWidth="400"
+                            minHeight="200"
+                            width="400"
+                            height="200"
+                            styleClass="modal-content"
+                            headerClass="modal-header"
+                            resizeable="true">
+        <f:facet name="controls">
+            <button type="button"
+                    class="close pf-confirmdlg-cancel">
+                &times;
+            </button>
+        </f:facet>
+        <a4j:commandButton type="button"
+                           value="OK"
+                           styleClass="btn btn-success pf-confirmdlg-ok"/>
+        <a4j:commandButton type="button"
+                           value="Cancel"
+                           styleClass="btn btn-default pf-confirmdlg-cancel"/>
+    </pf:confirmDialog>
+
+
+    <h:outputScript library="org.positivefaces" name="js/bootstrap.js"/>
+</h:body>
+</html>

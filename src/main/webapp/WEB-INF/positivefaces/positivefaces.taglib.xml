@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facelet-taglib xmlns="http://java.sun.com/xml/ns/javaee"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd"
+                version="2.0" id="positive">
+    <namespace>http://positivefaces.org</namespace>
+
+    <tag>
+        <tag-name>commandButton</tag-name>
+        <component>
+            <component-type>org.positivefaces.CommandButton</component-type>
+            <renderer-type>org.positivefaces.CommandButtonRenderer</renderer-type>
+        </component>
+        <attribute>
+            <description>Access key that, when pressed, transfers focus to this element.</description>
+            <display-name>Access Key</display-name>
+            <icon/>
+            <name>accesskey</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application.</description>
+            <display-name>Application Action</display-name>
+            <icon/>
+            <name>action</name>
+            <type>javax.faces.el.MethodBinding</type>
+        </attribute>
+        <attribute>
+            <description>MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that "some action happened".</description>
+            <display-name>Action Listener</display-name>
+            <icon/>
+            <name>actionListener</name>
+            <type>javax.faces.el.MethodBinding</type>
+        </attribute>
+        <attribute>
+            <description>The value binding expression used to wire up this component to a component property of a JavaBean class.</description>
+            <icon/>
+            <name>binding</name>
+            <type>javax.faces.component.UIComponent</type>
+        </attribute>
+        <attribute>
+            <description>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input.</description>
+            <name>bypassUpdates</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Serialized (on default with JSON) data passed to the client by a developer on an AJAX request. It's accessible via "event.data" syntax. Both primitive types and complex types such as arrays and collections can be serialized and used with data.</description>
+            <name>data</name>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>Flag indicating that this element must never receive focus or be included in a subsequent submit.</description>
+            <display-name>Disabled Flag</display-name>
+            <icon/>
+            <name>disabled</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Ids of components that will participate in the "execute" portion of the Request Processing Lifecycle. Can be a single id, a space or comma separated list of Id's, or an EL Expression evaluating to an array or Collection. Any of the keywords "@this", "@form", "@all", "@none", "@region" may be specified in the identifier list. Some components make use of additional keywords.</description>
+            <name>execute</name>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</description>
+            <display-name>Component Identifier</display-name>
+            <icon/>
+            <name>id</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Absolute or relative URL of the image to be displayed for this button. If specified, this "input" element will be of type "image". Otherwise, it will be of the type specified by the "type" property with a label specified by the "value" property.</description>
+            <name>image</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Flag indicating that, if this component is activated by the user, notifications should be delivered to interested listeners and actions immediately (that is, during Apply Request Values phase) rather than waiting until Invoke Application phase.</description>
+            <display-name>Immediate Action</display-name>
+            <icon/>
+            <name>immediate</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>If "true", render only those ids specified in the "render" attribute, forgoing the render of the auto-rendered panels.</description>
+            <name>limitRender</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called after the ajax response comes back, but before the DOM is updated.</description>
+            <name>onbeforedomupdate</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called before an ajax request.</description>
+            <name>onbegin</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is clicked over this element.</description>
+            <display-name>Button Click Script</display-name>
+            <icon/>
+            <name>onclick</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called after the DOM is updated.</description>
+            <name>oncomplete</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is double clicked over this element.</description>
+            <display-name>Double Click Script</display-name>
+            <icon/>
+            <name>ondblclick</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a key is pressed down over this element.</description>
+            <display-name>Key Down Script</display-name>
+            <icon/>
+            <name>onkeydown</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a key is pressed and released over this element.</description>
+            <display-name>Key Press Script</display-name>
+            <icon/>
+            <name>onkeypress</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a key is released over this element.</description>
+            <display-name>Key Up Script</display-name>
+            <icon/>
+            <name>onkeyup</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is pressed down over this element.</description>
+            <display-name>Mouse Down Script</display-name>
+            <icon/>
+            <name>onmousedown</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved within this element.</description>
+            <display-name>Mouse Move Script</display-name>
+            <icon/>
+            <name>onmousemove</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved away from this element.</description>
+            <display-name>Mouse Out Script</display-name>
+            <icon/>
+            <name>onmouseout</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved onto this element.</description>
+            <display-name>Mouse Over Script</display-name>
+            <icon/>
+            <name>onmouseover</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is released over this element.</description>
+            <display-name>Mouse Up Script</display-name>
+            <icon/>
+            <name>onmouseup</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Ids of components that will participate in the "render" portion of the Request Processing Lifecycle. Can be a single id, a space or comma separated list of Id's, or an EL Expression evaluating to an array or Collection. Any of the keywords "@this", "@form", "@all", "@none", "@region" may be specified in the identifier list. Some components make use of additional keywords.</description>
+            <name>render</name>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>Flag indicating whether or not this component should be rendered (during Render Response Phase), or processed on any subsequent form submit. The default value for this property is true.</description>
+            <display-name>Rendered Flag</display-name>
+            <icon/>
+            <name>rendered</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Name of the request status component that will indicate the status of the Ajax request.</description>
+            <name>status</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>CSS style(s) to be applied when this component is rendered.</description>
+            <display-name>CSS Styles</display-name>
+            <icon/>
+            <name>style</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Space-separated list of CSS style class(es) to be applied when this element is rendered. This value must be passed through as the "class" attribute on generated markup.</description>
+            <display-name>CSS Style Classes</display-name>
+            <icon/>
+            <name>styleClass</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>This attribute specifies the position of the current element in the tabbing order for the current document. This value must be a number between 0 and 32767. User agents should ignore leading zeros.</description>
+            <name>tabindex</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Advisory title information about markup elements generated for this component.</description>
+            <display-name>Advisory Title</display-name>
+            <icon/>
+            <name>title</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Type of button to create. Can be one of "submit", "button", "image" and "reset". If not specified, the default value is "submit".</description>
+            <display-name>Button Type</display-name>
+            <icon/>
+            <name>type</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The current value of this component.</description>
+            <display-name>Value</display-name>
+            <icon/>
+            <name>value</name>
+            <type>java.lang.Object</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>commandLink</tag-name>
+        <component>
+            <component-type>org.positivefaces.CommandLink</component-type>
+            <renderer-type>org.positivefaces.CommandLinkRenderer</renderer-type>
+        </component>
+        <attribute>
+            <description>Access key that, when pressed, transfers focus to this element.</description>
+            <display-name>Access Key</display-name>
+            <icon/>
+            <name>accesskey</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>MethodExpression representing the application action to invoke when this component is activated by the user. The expression must evaluate to a public method that takes no parameters, and returns an Object (the toString() of which is called to derive the logical outcome) which is passed to the NavigationHandler for this application.</description>
+            <display-name>Application Action</display-name>
+            <icon/>
+            <name>action</name>
+            <type>javax.faces.el.MethodBinding</type>
+        </attribute>
+        <attribute>
+            <description>MethodExpression representing an action listener method that will be notified when this component is activated by the user. The expression must evaluate to a public method that takes an ActionEvent parameter, with a return type of void, &lt;span class="changed_added_2_0"&gt; or to a public method that takes no arguments with a return type of void. In the latter case, the method has no way of easily knowing where the event came from, but this can be useful in cases where a notification is needed that "some action happened".</description>
+            <display-name>Action Listener</display-name>
+            <icon/>
+            <name>actionListener</name>
+            <type>javax.faces.el.MethodBinding</type>
+        </attribute>
+        <attribute>
+            <description>The value binding expression used to wire up this component to a component property of a JavaBean class.</description>
+            <icon/>
+            <name>binding</name>
+            <type>javax.faces.component.UIComponent</type>
+        </attribute>
+        <attribute>
+            <description>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input.</description>
+            <name>bypassUpdates</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>The character encoding of the resource designated by this hyperlink.</description>
+            <display-name>Character Set</display-name>
+            <icon/>
+            <name>charset</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The position and shape of the hot spot on the screen (for use in client-side image maps).</description>
+            <display-name>Coordinates</display-name>
+            <icon/>
+            <name>coords</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Serialized (on default with JSON) data passed to the client by a developer on an AJAX request. It's accessible via "event.data" syntax. Both primitive types and complex types such as arrays and collections can be serialized and used with data.</description>
+            <name>data</name>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>Flag indicating that this element must never receive focus or be included in a subsequent submit.</description>
+            <display-name>Disabled Flag</display-name>
+            <icon/>
+            <name>disabled</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Ids of components that will participate in the "execute" portion of the Request Processing Lifecycle. Can be a single id, a space or comma separated list of Id's, or an EL Expression evaluating to an array or Collection. Any of the keywords "@this", "@form", "@all", "@none", "@region" may be specified in the identifier list. Some components make use of additional keywords.</description>
+            <name>execute</name>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>The language code of the resource designated by this hyperlink.</description>
+            <display-name>Language</display-name>
+            <icon/>
+            <name>hreflang</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</description>
+            <display-name>Component Identifier</display-name>
+            <icon/>
+            <name>id</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Flag indicating that, if this component is activated by the user, notifications should be delivered to interested listeners and actions immediately (that is, during Apply Request Values phase) rather than waiting until Invoke Application phase.</description>
+            <display-name>Immediate Action</display-name>
+            <icon/>
+            <name>immediate</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>If "true", render only those ids specified in the "render" attribute, forgoing the render of the auto-rendered panels.</description>
+            <name>limitRender</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called after the ajax response comes back, but before the DOM is updated.</description>
+            <name>onbeforedomupdate</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called before an ajax request.</description>
+            <name>onbegin</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is clicked over this element.</description>
+            <display-name>Button Click Script</display-name>
+            <icon/>
+            <name>onclick</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called after the DOM is updated.</description>
+            <name>oncomplete</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is double clicked over this element.</description>
+            <display-name>Double Click Script</display-name>
+            <icon/>
+            <name>ondblclick</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a key is pressed down over this element.</description>
+            <display-name>Key Down Script</display-name>
+            <icon/>
+            <name>onkeydown</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a key is pressed and released over this element.</description>
+            <display-name>Key Press Script</display-name>
+            <icon/>
+            <name>onkeypress</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a key is released over this element.</description>
+            <display-name>Key Up Script</display-name>
+            <icon/>
+            <name>onkeyup</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is pressed down over this element.</description>
+            <display-name>Mouse Down Script</display-name>
+            <icon/>
+            <name>onmousedown</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved within this element.</description>
+            <display-name>Mouse Move Script</display-name>
+            <icon/>
+            <name>onmousemove</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved away from this element.</description>
+            <display-name>Mouse Out Script</display-name>
+            <icon/>
+            <name>onmouseout</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved onto this element.</description>
+            <display-name>Mouse Over Script</display-name>
+            <icon/>
+            <name>onmouseover</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is released over this element.</description>
+            <display-name>Mouse Up Script</display-name>
+            <icon/>
+            <name>onmouseup</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The relationship from the current document to the anchor specified by this hyperlink. The value of this attribute is a space-separated list of link types.</description>
+            <display-name>Relationship</display-name>
+            <icon/>
+            <name>rel</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Ids of components that will participate in the "render" portion of the Request Processing Lifecycle. Can be a single id, a space or comma separated list of Id's, or an EL Expression evaluating to an array or Collection. Any of the keywords "@this", "@form", "@all", "@none", "@region" may be specified in the identifier list. Some components make use of additional keywords.</description>
+            <name>render</name>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>Flag indicating whether or not this component should be rendered (during Render Response Phase), or processed on any subsequent form submit. The default value for this property is true.</description>
+            <display-name>Rendered Flag</display-name>
+            <icon/>
+            <name>rendered</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>A reverse link from the anchor specified by this hyperlink to the current document. The value of this attribute is a space-separated list of link types.</description>
+            <display-name>Reverse Link</display-name>
+            <icon/>
+            <name>rev</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The shape of the hot spot on the screen (for use in client-side image maps). Valid values are: default (entire region); rect (rectangular region); circle (circular region); and poly (polygonal region).</description>
+            <display-name>Shape</display-name>
+            <icon/>
+            <name>shape</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Name of the request status component that will indicate the status of the Ajax request.</description>
+            <name>status</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>CSS style(s) to be applied when this component is rendered.</description>
+            <display-name>CSS Styles</display-name>
+            <icon/>
+            <name>style</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Space-separated list of CSS style class(es) to be applied when this element is rendered. This value must be passed through as the "class" attribute on generated markup.</description>
+            <display-name>CSS Style Classes</display-name>
+            <icon/>
+            <name>styleClass</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>This attribute specifies the position of the current element in the tabbing order for the current document. This value must be a number between 0 and 32767. User agents should ignore leading zeros.</description>
+            <name>tabindex</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Advisory title information about markup elements generated for this component.</description>
+            <display-name>Advisory Title</display-name>
+            <icon/>
+            <name>title</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The content type of the resource designated by this hyperlink.</description>
+            <display-name>Content Type</display-name>
+            <icon/>
+            <name>type</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The current value of this component.</description>
+            <display-name>Value</display-name>
+            <icon/>
+            <name>value</name>
+            <type>java.lang.Object</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>confirm</tag-name>
+        <behavior>
+            <behavior-id>org.positivefaces.behavior.ConfirmBehavior</behavior-id>
+            <handler-class>org.richfaces.view.facelets.html.CustomBehaviorHandler</handler-class>
+        </behavior>
+        <attribute>
+            <description>Header text of the confirmation dialog.</description>
+            <name>header</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Detail text of the confirmation dialog.</description>
+            <name>message</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Icon to display inside the confirmation dialog.</description>
+            <name>icon</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <tag-name>confirmDialog</tag-name>
+        <component>
+            <component-type>org.positivefaces.ConfirmDialog</component-type>
+            <renderer-type>org.positivefaces.ConfirmDialogRenderer</renderer-type>
+        </component>
+        <attribute>
+            <description>If "true" confirmDialog will be auto-sized according to the content. Default value is "false".</description>
+            <name>autosized</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>The value binding expression used to wire up this component to a component property of a JavaBean class.</description>
+            <icon/>
+            <name>binding</name>
+            <type>javax.faces.component.UIComponent</type>
+        </attribute>
+        <attribute>
+            <description>Assigns one or more space-separated CSS class names to the component controls.</description>
+            <name>controlsClass</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Defines the DOM element, which stacking context will assimilate the confirmDialog. Possible values: "body", "form", "parent". Default value is "body".</description>
+            <name>domElementAttachment</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Defines whenever the dialog will follow the scrolling of the screen. Default value is "true".</description>
+            <name>followByScroll</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Assigns the header for the confirmDialog.</description>
+            <name>header</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Assigns one or more space-separated CSS class names to the component header.</description>
+            <name>headerClass</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines height of component. Default value is "300".</description>
+            <name>height</name>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>The component identifier for this component. This value must be unique within the closest parent component that is a naming container.</description>
+            <display-name>Component Identifier</display-name>
+            <icon/>
+            <name>id</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines X position of component left-top corner. Default value is "auto".</description>
+            <name>left</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines max height of component.</description>
+            <name>maxHeight</name>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines max width of component.</description>
+            <name>maxWidth</name>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines min height of component. Default value is "10". If the value is less then 10, a "IllegalArgumentException" exception is thrown.</description>
+            <name>minHeight</name>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines min width of component. Default value is "10". If the value is less then 10, a "IllegalArgumentException" exception is thrown.</description>
+            <name>minWidth</name>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>If "true" there is possibility to move component. Default value is "true".</description>
+            <name>moveable</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>The client-side code executed before the dialog disappears.</description>
+            <name>onbeforehide</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side code executed before this component is shown.</description>
+            <name>onbeforeshow</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side code executed after the dialog disappears.</description>
+            <name>onhide</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is clicked over the confirmDialog mask.</description>
+            <name>onmaskclick</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button for context menu is clicked over the confirmDialog mask.</description>
+            <name>onmaskcontextmenu</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is double clicked over the confirmDialog mask.</description>
+            <name>onmaskdblclick</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is pressed down over the confirmDialog mask.</description>
+            <name>onmaskmousedown</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved within the confirmDialog mask.</description>
+            <name>onmaskmousemove</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved away from the confirmDialog mask.</description>
+            <name>onmaskmouseout</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is moved onto the confirmDialog mask.</description>
+            <name>onmaskmouseover</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Javascript code executed when a pointer button is released over the confirmDialog mask.</description>
+            <name>onmaskmouseup</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called before the modal panel is moved.</description>
+            <name>onmove</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side script method to be called when the modal panel is resized.</description>
+            <name>onresize</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The client-side code executed after the dialog is shown.</description>
+            <name>onshow</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>If "true" confirmDialog creates iframe to overlap embed objects like PDF on a page. Default value is "false".</description>
+            <name>overlapEmbedObjects</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Flag indicating whether or not this component should be rendered (during Render Response Phase), or processed on any subsequent form submit. The default value for this property is true.</description>
+            <display-name>Rendered Flag</display-name>
+            <icon/>
+            <name>rendered</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>If "true" there is possibility to change component size. Default value is "true".</description>
+            <name>resizeable</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Dialog shadow depth for suggestion content.</description>
+            <name>shadowDepth</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>HTML CSS class attribute of element for dialog suggestion content.</description>
+            <name>shadowOpacity</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <!-- <attribute>
+            <description>If "true" value for this attribute makes a modal dialog opened as default. Default value is "false".</description>
+            <name>show</name>
+            <type>boolean</type>
+        </attribute> -->
+        <attribute>
+            <description>CSS style(s) to be applied when this component is rendered.</description>
+            <display-name>CSS Styles</display-name>
+            <icon/>
+            <name>style</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Space-separated list of CSS style class(es) to be applied when this element is rendered. This value must be passed through as the "class" attribute on generated markup.</description>
+            <display-name>CSS Style Classes</display-name>
+            <icon/>
+            <name>styleClass</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines Y position of component left-top corner. Default value is "auto".</description>
+            <name>top</name>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Defines whether to trim or not elements inside confirmDialog. Default value is "true"</description>
+            <name>trimOverlayedElements</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>Attribute defines width of component. Default value is "200".</description>
+            <name>width</name>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>Attribute is similar to the standard HTML attribute and can specify window placement relative to the content. Default value is "3".</description>
+            <name>zindex</name>
+            <type>int</type>
+        </attribute>
+    </tag>
+</facelet-taglib>
